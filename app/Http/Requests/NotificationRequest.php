@@ -23,6 +23,7 @@ class NotificationRequest extends FormRequest
      */
     public function rules()
     {
+        //hello test
         return [
             'email' => ['required', 'string'],
             'phone' => ['nullable', 'string'],
