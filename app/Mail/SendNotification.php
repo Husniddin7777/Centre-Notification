@@ -10,17 +10,15 @@ class SendNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public string $body;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-
-    public $messages;
-    public function __construct($messages)
-    {
-        $this->messages = $messages;
-        $this->subject('Message');
+    public function __construct($message) {
+        $this->body = $message;
     }
 
     /**
@@ -30,7 +28,10 @@ class SendNotification extends Mailable
      */
     public function build()
     {
-        return $this->view('notification');
-    }
+        $body = $this->body;
 
+        return $this->subject('Message')
+            ->view('notification', compact('body'));
+
+    }
 }

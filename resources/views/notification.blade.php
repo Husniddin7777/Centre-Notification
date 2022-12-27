@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h4>{{ $messages }}</h4>
+<h4>{{ $body }}</h4>
 
 </body>
 </html>

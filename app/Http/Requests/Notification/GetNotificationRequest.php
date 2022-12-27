@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Notification;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class NotificationRequest extends FormRequest
+class GetNotificationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,9 @@ class NotificationRequest extends FormRequest
      */
     public function rules()
     {
-        //hello test
         return [
-            'email' => ['required', 'string'],
-            'phone' => ['nullable', 'string'],
-            'message' => ['required', 'string']
+            'date' => ['required', 'string'],
+            'type' => ['required', 'string']
         ];
     }
 }

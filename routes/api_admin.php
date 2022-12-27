@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Api\Notifications\NotificationController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiAdmin\Notifications\NotificationsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::group(['prefix' => 'notifications'], function () {
-    Route::post('/', [NotificationController::class, 'store']);
-});
 
+Route::group(['prefix' => 'notification'], function () {
+    Route::get('/', [NotificationsController::class, 'index']);
+    Route::post('/chart', [NotificationsController::class, 'showChart']);
+});
 
